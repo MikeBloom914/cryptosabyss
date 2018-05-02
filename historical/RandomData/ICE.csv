@@ -1,0 +1,53 @@
+Symbol,Exchange,Name,Months,Quandl Code
+B,ICE,Brent Crude Futures,FGHJKMNQUVXZ,ICE/B
+T,ICE,WTI Crude Futures,FGHJKMNQUVXZ,ICE/T
+G,ICE,Gas Oil Futures,KMNQUVXZ,ICE/G
+ULS,ICE,Low Sulphur Gasoil Futures,FGHJKMNQUVXZ,ICE/ULS
+N,ICE,NYH RBOB Gasoline,FGHJKMNQUVXZ,ICE/N
+O,ICE,Heating Oil Futures,FGHJKMNQUVXZ,ICE/O
+M,ICE,UK Natural Gas Futures,FGHJKMNQUVXZ,ICE/M
+ATW,ICE,Rotterdam Coal Futures,FGHJKMNQUVXZ,ICE/ATW
+AFR,ICE,Richards Bay Coal Futures,FGHJKMNQUVXZ,ICE/AFR
+NCF,ICE,Newcastle Coal Futures,FGHJKMNQUVXZ,ICE/NCF
+C,ICE,ECX EUA Futures,HJKMUZ,ICE/C
+CEU,ICE,ECX EUAA Futures,HJKMUZ,ICE/CEU
+CER,ICE,ECX CER Emission Futures,HJKMUZ,ICE/CER
+ERU,ICE,ECX ERU Emission Futures,Z,ICE/ERU
+TIB,ICE,WTI vs Brent Spread Option,FGHJKMNQUVXZ,ICE/TIB
+BPB,ICE,Endex Belgian Power Base Load Futures,FGHJKMNQUVXZ,ICE/BPB
+DPB,ICE,Endex Dutch Power Base Load Futures,FGHJKMNQUVXZ,ICE/DPB
+DPA,ICE,Endex Dutch Power Peak Load (8-20) Futures,FGHJKMNQUVXZ,ICE/DPA
+TFM,ICE,Endex Dutch TTF Gas Base Load Futures,FGHJKMNQUVXZ,ICE/TFM
+GNM,ICE,Endex German NCG Futures,FGHJKMNQUVXZ,ICE/GNM
+GER,ICE,Endex German GASPOOL Futures,FGHJKMNQUVXZ,ICE/GER
+CC,ICE,Cocoa Futures,HKNUZ,ICE/CC
+KC,ICE,Coffee C Futures,HKNUZ,ICE/KC
+CT,ICE,Cotton No. 2 Futures,HKNVZ,ICE/CT
+OJ,ICE,Orange Juice Futures,FHKNUX,ICE/OJ
+SB,ICE,Sugar No. 11 Futures,HKNV,ICE/SB
+SF,ICE,Sugar No. 16 Futures,FHKNUX,ICE/SF
+ICN,ICE,Corn Futures,HKNUZ,ICE/ICN
+IS,ICE,Soybean Futures,FHKNQUX,ICE/IS
+ISM,ICE,Soybean Meal futures,FHKNQUVZ,ICE/ISM
+IBO,ICE,Soybean Oil Futures,FHKNQUVZ,ICE/IBO
+IW,ICE,Wheat Futures,HKNUZ,ICE/IW
+RS,ICE,Canola Futures,FHKNX,ICE/RS
+BW,ICE,Barley Futures,HKNVZ,ICE/BW
+DW,ICE,Durum Wheat Futures,HKNVZ,ICE/DW
+WA,ICE,Milling Wheat Futures,HKNVZ,ICE/WA
+RF,ICE,Russell 1000 Index Mini Futures,MUZ,ICE/RF
+TF,ICE,Russell 2000 Index Mini Futures,MUZ,ICE/TF
+DX,ICE,US Dollar Index Futures,MUZ,ICE/DX
+SS,ICE,GBP/CHF Futures,MUZ,ICE/SS
+SY,ICE,GBP/JPY Futures,MUZ,ICE/SY
+MP,ICE,Sm GBP/USD Futures,MUZ,ICE/MP
+RV,ICE,Russell 1000 Value Index Futures,MUZ,ICE/RV
+RG,ICE,Russell 1000 Growth Index Futures,MUZ,ICE/RG
+P,ICE,UK Peak Electricity Futures,MUZ,ICE/P
+Y,ICE,UK Base Electricity Futures,MUZ,ICE/Y
+AR,ICE,AUSTRALIAN DOLLAR/NEW ZEALAND DOLLAR FUTURES,MUZ,ICE/AR
+ZJ,ICE,New Zealand Dollar/Japanese Yen Futures,MUZ,ICE/ZJ
+NJ,ICE, Norwegian Krone/Swedish Krona Futures,MUZ,ICE/NJ
+KRU,ICE,Russian Ruble/US Dollar Futures,MUZ,ICE/KRU
+ZR,ICE,US Dollar/South African Rand Futures,MUZ,ICE/ZR
+NT,ICE,US Dollar/Norwegian Krone Futures,MUZ,ICE/NT
