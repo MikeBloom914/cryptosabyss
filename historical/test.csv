@@ -1,0 +1,22 @@
+﻿Type,Name,Norm_to_Bitcoin,Description
+ETF,EWJ,,iShares Japan
+ETF,FDN,0.6839,Dow Jones Internet
+ETF,GLD,0.4202,SPDR Gold Shares
+ETF,IWM,0.784,Russell 2000
+ETF,IWY,,Russell Top 200 Growth
+ETF,ROBO,,Robotics & Automation
+ETF,SPY,,S&P 500
+ETF,DIA,,Dow Jones
+ETF,TLT,,20+ Year Treas. Bond
+ETF,UNG,,US Natural Gas
+ETF,USO,,US Oil
+ETF,VGT,,Vanguart I.T.
+ETF,XLE,,SPDR Energy
+ETF,XLK,,SPDR Utilities
+ETF,XLU,,SPDR Tech
+ETF,XLY,,Consumer Discretionary
+STOCK,AAPL,0.8107,Apple
+STOCK,GE,-0.8055,General Electric
+STOCK,JPM,0.7661,J.P. Morgan
+STOCK,GOOG,0.7641,Google
+STOCK,C,0.766,Citgroup
