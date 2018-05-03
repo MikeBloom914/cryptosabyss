@@ -26,7 +26,7 @@ def get_volume_keyword_year(keyword):
                 date = d.split(",")[0]
                 count = d.split(",")[1]
                 #print (date + " ==> " + str(count))
-                print (date)
+                #print (date)
                 print (count)
             except:
                 pass
@@ -51,8 +51,8 @@ def get_volume_keyword_month(keyword):
                 date = d.split(",")[0]
                 count = d.split(",")[1]
                 #print(date + " = " + str(count))
-                #print(date)
-                #print(count)
+                # print(date)
+                # print(count)
             except:
                 pass
     else:
@@ -60,8 +60,8 @@ def get_volume_keyword_month(keyword):
 
 
 def main():
-    get_volume_keyword_year("bitcoin")
-    get_volume_keyword_month("bitcoin")
+    get_volume_keyword_year("etherium")
+    # get_volume_keyword_month("bitcoin")
 
 
 if __name__ == '__main__':
