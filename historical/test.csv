@@ -1,22 +1,22 @@
-﻿Type,Name,year,Norm_to_Bitcoin,Description
-ETF,EWJ,2017,0.4,iShares Japan
-ETF,FDN,2017,0.6839,Dow Jones Internet
-ETF,GLD,2017,0.4202,SPDR Gold Shares
-ETF,IWM,2017,0.784,Russell 2000
-ETF,IWY,2017,0.784,Russell Top 200 Growth
-ETF,ROBO,2017,0.784,Robotics & Automation
-ETF,SPY,2017,0.784,S&P 500
-ETF,DIA,2017,0.784,Dow Jones
-ETF,TLT,2017,0.784,20+ Year Treas. Bond
-ETF,UNG,2017,0.784,US Natural Gas
-ETF,USO,2017,0.784,US Oil
-ETF,VGT,2017,0.784,Vanguart I.T.
-ETF,XLE,2017,0.784,SPDR Energy
-ETF,XLK,2017,0.784,SPDR Utilities
-ETF,XLU,2017,0.784,SPDR Tech
-ETF,XLY,2017,0.784,Consumer Discretionary
-STOCK,AAPL,2017,0.8107,Apple
-STOCK,GE,2017,-0.8055,General Electric
-STOCK,JPM,2017,0.7661,J.P. Morgan
-STOCK,GOOG,2017,0.7641,Google
-STOCK,C,2017,0.766,Citgroup
+﻿Type,year,Name,Description,Norm_to_Bitcoin,List
+ETF,2017,EWJ,iShares Japan,0.4,1
+ETF,2017,FDN,Dow Jones Internet,0.6839,2
+ETF,2017,GLD,SPDR Gold Shares,0.4202,3
+ETF,2017,IWM,Russell 2000,0.784,4
+ETF,2017,IWY,Russell Top 200 Growth,0.784,5
+ETF,2017,ROBO,Robotics & Automation,0.784,6
+ETF,2017,SPY,S&P 500,0.784,7
+ETF,2017,DIA,Dow Jones,0.784,8
+ETF,2017,TLT,20+ Year Treas. Bond,0.784,9
+ETF,2017,UNG,US Natural Gas,0.784,10
+ETF,2017,USO,US Oil,0.784,11
+ETF,2017,VGT,Vanguart I.T.,0.784,12
+ETF,2017,XLE,SPDR Energy,0.784,13
+ETF,2017,XLK,SPDR Utilities,0.784,14
+ETF,2017,XLU,SPDR Tech,0.784,15
+ETF,2017,XLY,Consumer Discretionary,0.784,16
+STOCK,2017,AAPL,Apple,0.8107,17
+STOCK,2017,GE,General Electric,-0.8055,18
+STOCK,2017,JPM,J.P. Morgan,0.7661,19
+STOCK,2017,GOOG,Google,0.7641,20
+STOCK,2017,C,Citgroup,0.766,21
