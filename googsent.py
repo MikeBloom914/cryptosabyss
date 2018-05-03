@@ -5,12 +5,12 @@ import datetime
 import json
 
 
-#def generate_graph():
-    #print ("[+] generating graph")
+# def generate_graph():
+#print ("[+] generating graph")
 ########################Numbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. A score of 0 means there was not enough data for this term.#########################
 
 def get_volume_keyword_year(keyword):
-    ###use google trends to get volume search for keyword
+    # use google trends to get volume search for keyword
    #print ("[+] getting volume for keyword " + keyword + " for last year")
     url = 'https://trends.google.com/trends/api/explore?hl=fr&tz=-60&req={"comparisonItem":[{"keyword":"' + keyword + '","geo":"","time":"today+12-m",}],"category":0,"property":""}&tz=-60'
     r = requests.get(url)
@@ -25,7 +25,9 @@ def get_volume_keyword_year(keyword):
             try:
                 date = d.split(",")[0]
                 count = d.split(",")[1]
-                print (date + " ==> " + str(count))
+                #print (date + " ==> " + str(count))
+                print (date)
+                print (count)
             except:
                 pass
     else:
@@ -33,7 +35,7 @@ def get_volume_keyword_year(keyword):
 
 
 def get_volume_keyword_month(keyword):
-    ###use google trends to get volume search for keyword
+    # use google trends to get volume search for keyword
     #print ("[+] getting volume for keyword " + keyword + " for last month")
     url = 'https://trends.google.com/trends/api/explore?hl=fr&tz=-60&req={"comparisonItem":[{"keyword":"' + keyword + '","geo":"","time":"today+1-m",}],"category":0,"property":""}&tz=-60'
     r = requests.get(url)
@@ -48,7 +50,9 @@ def get_volume_keyword_month(keyword):
             try:
                 date = d.split(",")[0]
                 count = d.split(",")[1]
-                print(date + " = " + str(count))
+                #print(date + " = " + str(count))
+                #print(date)
+                #print(count)
             except:
                 pass
     else:
