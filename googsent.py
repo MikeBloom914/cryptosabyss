@@ -60,7 +60,7 @@ def get_volume_keyword_month(keyword):
 
 
 def main():
-    get_volume_keyword_year("etherium")
+    get_volume_keyword_year("coindesk")
     # get_volume_keyword_month("bitcoin")
 
 
