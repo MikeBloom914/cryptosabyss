@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-ref = 'EWJ'
+ref = 'ROBO'
 #ref = sys.argv[0]
 start_date = 'May 01, 2017'
 end_date = 'Apr 30, 2017'
@@ -100,9 +100,10 @@ app.layout = html.Div(children=[
                 margin={'l': 60, 'b': 100, 't': 10, 'r': 40},
                 legend={'x': 0, 'y': 1},
             )
+
         }
     )
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=50000)
+    app.run_server(debug=True, host='0.0.0.0', port=5025)
