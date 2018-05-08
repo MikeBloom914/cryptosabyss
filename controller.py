@@ -32,17 +32,17 @@ def homepage():
         return render_template('homepage.html')
 
 
-@app.route('/graph', methods=['GET', 'POST'])
-def graph():
-    if request.method == 'GET':
-        return render_template('graph.html')
-    else:
-        symbol = request.form['thingone']
-        # print(symbol)
-        #os.system('python3 normgraph.py {}'.format(symbol))
-        x = model.graph(symbol)
-        # return render_template('graph.html', message=x)
-        return redirect('http://0.0.0.0:7000')
+# @app.route('/graph', methods=['GET', 'POST'])
+# def graph():
+#     if request.method == 'GET':
+#         return render_template('graph.html')
+#     else:
+#         symbol = request.form['thingone']
+#         # print(symbol)
+#         #os.system('python3 normgraph.py {}'.format(symbol))
+#         x = model.graph(symbol)
+#         # return render_template('graph.html', message=x)
+#         return redirect('http://0.0.0.0:7000')
 
 
 if __name__ == '__main__':

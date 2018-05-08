@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+python3 anacottsteel.py &
 python3 EWJ.py &
 python3 FDN.py &
 python3 GLD.py &
@@ -27,7 +29,7 @@ python3 GCRYP.py &
 python3 GTRMP.py &
 python3 GPRES.py &
 python3 GSATO.py &
-python3 GCOMP.py &
+python3 GCURR.py &
 python3 GETHER.py &
 python3 GMAF.py &
 python3 GBCH.py &
