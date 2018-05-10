@@ -1,3 +1,5 @@
+#!usr/bin/env python3
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -8,6 +10,10 @@ import os
 import pandas as pd
 from pandas_datareader.data import DataReader
 import time
+import plotly.graph_objs as go
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
 
 app = dash.Dash('stock-tickers')
 server = app.server
@@ -56,14 +62,6 @@ app.layout = html.Div([
 ], className="container")
 
 
-def bbands(price, window_size=10, num_of_std=5):
-    rolling_mean = price.rolling(window=window_size).mean()
-    rolling_std = price.rolling(window=window_size).std()
-    upper_band = rolling_mean + (rolling_std * num_of_std)
-    lower_band = rolling_mean - (rolling_std * num_of_std)
-    return rolling_mean, upper_band, lower_band
-
-
 @app.callback(
     dash.dependencies.Output('graphs', 'children'),
     [dash.dependencies.Input('stock-ticker-input', 'value'), dash.dependencies.Input('date-range', 'start_date'), dash.dependencies.Input('date-range', 'end_date')])
@@ -78,6 +76,17 @@ def update_graph(tickers, start_date, end_date):
             df = DataReader(str(ticker), 'quandl',
                             dt.datetime.strptime(start_date, '%Y-%m-%d'),
                             dt.datetime.strptime(end_date, '%Y-%m-%d'))
+            series = df['Close']
+            values = series.values
+            values = values.reshape((len(values), 1))
+            scaler = MinMaxScaler(feature_range=(0, 1))
+            scaler = scaler.fit(values)
+            normalized = scaler.transform(values)
+
+            h = []
+            for i in range(len(values)):
+                h.append(float(normalized[i]))
+            df['Norm'] = h
 
         except:
             graphs.append(html.H3(
@@ -86,36 +95,37 @@ def update_graph(tickers, start_date, end_date):
             ))
             continue
 
-        candlestick = {
+        line1 = {
             'x': df.index,
-            'open': df['Open'],
-            'high': df['High'],
-            'low': df['Low'],
-            'close': df['Close'],
-            'type': 'candlestick',
+            'y': df['Norm'],
+            'type': {'line': {'color': colorscale[0]}},
             'name': ticker,
             'legendgroup': ticker,
-            'increasing': {'line': {'color': colorscale[0]}},
-            'decreasing': {'line': {'color': colorscale[1]}}
+            'text': df['Close'],
+            'hoverinfo': 'text'
+            #'line': {'color': colorscale[0]},
+            #'decreasing': {'line': {'color': colorscale[1]}}
         }
-        bb_bands = bbands(df.Close)
-        bollinger_traces = [{
-            'x': df.index, 'y': y,
-            'type': 'scatter', 'mode': 'lines',
-            'line': {'width': 1, 'color': colorscale[(i * 2) % len(colorscale)]},
-            'hoverinfo': 'none',
+        line2 = {
+            'x': df.index,
+            'y': df['Norm'],
+            'type': 'line',
+            'name': ticker,
             'legendgroup': ticker,
-            'showlegend': True if i == 0 else False,
-            'name': '{} - bollinger bands'.format(ticker)
-        } for i, y in enumerate(bb_bands)]
+            'text': df['Close'],
+            'hoverinfo': 'text'
+        }
+
         graphs.append(dcc.Graph(
             id=ticker,
             figure={
-                'data': [candlestick] + bollinger_traces,
-                'layout': {
-                    'margin': {'b': 0, 'r': 10, 'l': 60, 't': 0},
-                    'legend': {'x': 0}
-                }
+                'data': [line1, line2],
+                'layout': go.Layout(
+                    xaxis={'title': 'Date'},
+                    yaxis={'title': 'Price'},
+                    margin={'l': 60, 'b': 100, 't': 10, 'r': 40},
+                    legend={'x': 0, 'y': 1},
+                )
             }
         )
         )
