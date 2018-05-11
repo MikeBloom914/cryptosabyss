@@ -10,6 +10,8 @@ import os
 import pandas as pd
 from pandas_datareader.data import DataReader
 import time
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
 
 app = dash.Dash('stock-tickers')
 server = app.server

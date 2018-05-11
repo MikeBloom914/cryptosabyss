@@ -9,7 +9,6 @@ import dash_table_experiments as dt
 import pandas as pd
 import numpy as np
 import plotly
-plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
 #from bitetfgraph import ref
 app = dash.Dash()
 # print(ref)
@@ -39,12 +38,13 @@ ROWS = [
 ]
 
 
-app.layout = html.Div([
+app.layout = html.Div([html.Div([
     html.H2('CryptosAbyss'),
-    html.H4('Google and Yahoo represent the interest of the chosen words/terms that were searched in Google / Youtube over the time frame presented.'),
+    html.H5('Google and Yahoo represent the interest of the chosen words/terms that were searched in Google / Youtube over the time frame presented.'),
     html.H6('--The amount of interest is represented with numbers on a scale from 0-100 having 100 being the moment in the time frame where there was the most interest in searching Google or Yahoo with the word/term presented, and 0 being the least amount of interest shown.'),
     html.H6('--These numbers as well as stock/etf prices were then normalized on a scale of 0-1 which will show the price/interest over the course of time for each item.'),
-    html.H4('After converting all the numbers to normalized numbers on an equal 0-1 scale, the number shown under correlation represents the percentage amount of movement that each of the given items move over time ALL compared to the price of Bitcoin'),
+    html.H5('After converting all the numbers to normalized numbers on an equal 0-1 scale, the number shown under correlation represents the percentage amount of movement that each of the given items move over time ALL compared to the price of Bitcoin'),
+]),
     dt.DataTable(
         rows=DF_ChartBit.to_dict('records'),
         row_selectable=True,
@@ -52,11 +52,11 @@ app.layout = html.Div([
         sortable=True,
         selected_row_indices=[],
         id='datatable-gapminder'
-    ),
+),
     html.Div(id='selected-indexes'),
     dcc.Graph(
         id='graph-gapminder'
-    ),
+),
 ], className="container")
 
 
@@ -111,4 +111,4 @@ app.css.append_css({
 })
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='127.0.0.1', port=7000)
+    app.run_server(debug=True, host='127.0.0.1', port=8000)
