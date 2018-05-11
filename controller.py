@@ -7,6 +7,10 @@ from flask import Flask, redirect, render_template, request, url_for
 #import model
 import os
 
+
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
 app = Flask(__name__)
 
 

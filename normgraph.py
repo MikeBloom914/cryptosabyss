@@ -17,6 +17,10 @@ import sys
 import csv
 import plotly.graph_objs as go
 
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
+
 ref = 'SMH'
 
 start_date = 'May 01, 2017'

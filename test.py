@@ -9,6 +9,10 @@ import dash_table_experiments as dt
 import pandas as pd
 import numpy as np
 import plotly
+
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
+
 #from bitetfgraph import ref
 app = dash.Dash()
 # print(ref)
