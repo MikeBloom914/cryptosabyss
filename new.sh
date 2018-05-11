@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-python3 anacottsteel.py &
+python3 normanacott.py &
 python3 EWJ.py &
 python3 FDN.py &
 python3 GLD.py &

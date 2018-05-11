@@ -9,18 +9,26 @@ import dash_table_experiments as dt
 import pandas as pd
 import numpy as np
 import plotly
-#from bitetfgraph import ref
-app = dash.Dash()
-# print(ref)
-app.scripts.config.serve_locally = True
-# app.css.config.serve_locally = True
 
-#DF_Bitcoin = pd.read_csv('test.csv')
+app = dash.Dash()
+app.scripts.config.serve_locally = True
+app.config.suppress_callback_exceptions = True
+
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+index_page = html.Div([
+    html.H1('Welcome to Bloom\'s Page!'),
+    dcc.Link('CryposAbyss', href='/page-1'),
+    html.Br(),
+    dcc.Link('Anacott Steel', href='/page-2'),
+])
+
 
 DF_ChartBit = pd.read_csv('chartinfo.csv')
-
 DF_ChartBit.loc[0:20]
-
 DF_SIMPLE = pd.DataFrame({
     'x': ['A', 'B', 'C', 'D', 'E', 'F'],
     #'y': [4, 3, 1, 2, 3, 6],
@@ -37,8 +45,7 @@ ROWS = [
     {'a': 'CD', 'b': 6}
 ]
 
-
-app.layout = html.Div([
+page_1_layout = html.Div([
     html.H2('CryptosAbyss'),
     html.H4('Google and Yahoo represent the interest of the chosen words/terms that were searched in Google / Youtube over the time frame presented.'),
     html.H6('--The amount of interest is represented with numbers on a scale from 0-100 having 100 being the moment in the time frame where there was the most interest in searching Google or Yahoo with the word/term presented, and 0 being the least amount of interest shown.'),
@@ -56,6 +63,18 @@ app.layout = html.Div([
     dcc.Graph(
         id='graph-gapminder'
     ),
+    #], className="container"),
+    #     dcc.Dropdown(
+    #         id='page-1-dropdown',
+    #         options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
+    #         value='LA'
+    #     ),
+    # html.Div(id='page-1-content'),
+    html.Br(),
+    dcc.Link('Anacott Steel', href='/page-2'),
+    html.Br(),
+    dcc.Link('Go back to home', href='/'),
+    # ])
 ], className="container")
 
 
@@ -63,6 +82,10 @@ app.layout = html.Div([
     Output('datatable-gapminder', 'selected_row_indices'),
     [Input('graph-gapminder', 'clickData')],
     [State('datatable-gapminder', 'selected_row_indices')])
+# @app.callback(dash.dependencies.Output('page-1-content', 'children'),
+#               [dash.dependencies.Input('page-1-dropdown', 'value')])
+# def page_1_dropdown(value):
+#     return 'You have selected "{}"'.format(value)
 def update_selected_row_indices(clickData, selected_row_indices):
     if clickData:
         for point in clickData['points']:
@@ -86,7 +109,6 @@ def update_figure(rows, selected_row_indices):
     marker = {'color': ['#0074D9'] * len(dff)}
     for i in (selected_row_indices or []):
         marker['color'][i] = '#FF851B'
-
     fig.append_trace({
         'x': dff['Type'],
         'y': dff['Correlation'],
@@ -105,9 +127,43 @@ def update_figure(rows, selected_row_indices):
     return fig
 
 
-app.css.append_css({
-    'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
-})
+page_2_layout = html.Div([
+    html.H1('Page 2'),
+    dcc.RadioItems(
+        id='page-2-radios',
+        options=[{'label': i, 'value': i} for i in ['Orange', 'Blue', 'Red']],
+        value='Orange'
+    ),
+    html.Div(id='page-2-content'),
+    html.Br(),
+    dcc.Link('CryptosAbyss', href='/page-1'),
+    html.Br(),
+    dcc.Link('Go back to home', href='/')
+])
+
+
+@app.callback(dash.dependencies.Output('page-2-content', 'children'),
+              [dash.dependencies.Input('page-2-radios', 'value')])
+def page_2_radios(value):
+    return 'You have selected "{}"'.format(value)
+
+
+# Update the index
+@app.callback(dash.dependencies.Output('page-content', 'children'),
+              [dash.dependencies.Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-1':
+        return page_1_layout
+    elif pathname == '/page-2':
+        return page_2_layout
+    else:
+        return index_page
+
+
+# app.css.append_css({
+#     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
+# })
+
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='127.0.0.1', port=7000)
+    app.run_server(debug=True, host='127.0.0.1', port=12000)
