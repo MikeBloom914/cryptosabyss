@@ -2,6 +2,8 @@
 
 
 python3 normanacott.py &
+python3 finalchart.py &
+python3 controller.py &
 python3 EWJ.py &
 python3 FDN.py &
 python3 GLD.py &
@@ -41,6 +43,5 @@ python3 YIB.py &
 python3 YTRA.py &
 python3 YSAT.py &
 python3 YMAF.py &
-python3 finalchart.py &
-python3 controller.py &
+
 

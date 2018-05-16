@@ -13,6 +13,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
+
 ref = 'GBLO'
 #ref = sys.argv[0]
 start_date = 'May 01, 2017'
@@ -59,7 +63,7 @@ rdcorr = round(corr1, 3)
 
 #df = DF_All.to_csv('{ref}.csv'.format(ref=ref))
 
-print(rdcorr)
+#print(rdcorr)
 
 ###dispacher###
 app = dash.Dash()

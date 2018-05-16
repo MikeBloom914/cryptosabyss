@@ -17,6 +17,10 @@ import sys
 import csv
 import plotly.graph_objs as go
 
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
+
 ref = 'SMH'
 
 start_date = 'May 01, 2017'
@@ -73,6 +77,7 @@ app = dash.Dash()
 ### HAVE A CHECKLIST/DROPDOWN###
 app.layout = html.Div(children=[
     html.H2(children="Bitcoin vs {ref} has a correlation of {rdcorr} from {start_date} through {end_date}".format(ref=ref, rdcorr=rdcorr, start_date=start_date, end_date=end_date)),
+    html.H3('SMH is the semiconductor index with large percentages of Intel,NVDIA etc...'),
     html.H4('*Hover over lines to show prices'),
     html.H4('*Click and drag over graph to zoom in; double click to zoom out'),
     dcc.Graph(

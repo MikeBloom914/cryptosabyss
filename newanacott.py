@@ -14,6 +14,9 @@ import plotly.graph_objs as go
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
+import plotly
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+
 
 app = dash.Dash('stock-tickers')
 server = app.server
