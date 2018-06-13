@@ -1,21 +1,11 @@
 <!doctype html>
 <html lang="en">
-<<<<<<< HEAD
-<p>CryptosAbyss'</p>
-=======
-<p>('CryptosAbyss'),</p>
->>>>>>> b95418da76a5ae87178346ed0e2dab5b0347f24f
-    <p>Google and Yahoo represent the interest of the chosen words/terms that were searched in Google / Youtube over the time frame presented</p>
-    <p>--The amount of interest is represented with numbers on a scale from 0-100 having 100 being the moment in the time frame where there was the most interest in searching Google or Yahoo with the word/term presented, and 0 being the least amount of interest shown</p>
-    <p>--These numbers as well as stock/etf prices were then normalized on a scale of 0-1 which will show the price/interest over the course of time for each item</p>
-    <p>After converting all the numbers to normalized numbers on an equal 0-1 scale, the number shown under correlation represents the percentage amount of movement that each of the given </p>
 <!-- TradingView Widget BEGIN -->
-<!-- {% block main %} -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank">
-    <span class="blue-text">
-    <!-- Quotes</span> by TradingView</a></div> -->
+  <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"> -->
+    <!-- <span class="blue-text"> -->
+    Quotes</span> by TradingView</a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
   {
   "symbols": [
@@ -41,7 +31,7 @@
     }
   ],
   "locale": "en",
-  // "linkPageTemplate": "file:///Users/bloom/Desktop/steel/templates/wtf.html"
+  "linkPageTemplate": "file:///Users/bloom/Desktop/steel/templates/wtf.html"
 }
   </script>
 </div>
@@ -53,296 +43,110 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>CryptosAbyss</title>
+    <title>Anacott Steel</title>
 
-    <!-- Bootstrap core CSS will see above in the tab, not on the page-->
-  <!--   <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-<!--     <link href="dashboard.css" rel="stylesheet"> -->
+    <link href="dashboard.css" rel="stylesheet">
   </head>
-<!-- {% endblock main %} -->
 
-
-  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">CryptosAbyss</a>
-
+  <body>
+    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="/">Sign out</a>
+          <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="http://0.0.0.0:15000/">
-                  <span data-feather="home"></span>
-                  Anacott Steel <span class="sr-only"></span>
+    </nav> -->
 
-              </li>
+
+<html>
+<body>
+
+<h2>Chose Comparisons</h2>
+
+{% block main %}
+
+<p>First Select Stock or Contemporary Phenonemon</p>
+
+<form name="dropdown">
+  <select name="list">
+    <option value="   -   ">   -   </option>
+    <option value="stock.html">Stock</option>
+
+    <option value="github.html">Twitter</option>
+    <option value="anotherthing2">Another thing 2</option>
+    <option value="anotherthing3">Another thing 3</option>
+    <option value="nasdaq">Nasdaq</option>
+  </select>
+  <br><br>
+  <br><br>
+  <br><br>
+
+</form>
+{% endblock main %}
+<p>Select your Cryptocurrency</p>
+
+<form action="/action_page.php">
+  <select name="Currencies">
+    <option value="   -   ">   -   </option>
+    <option value="Bitcoin">Bitcoin</option>
+    <option value="litecoin">Litecoin</option>
+    <option value="Ethereum">Ethereum</option>
+    <option value="Zcash">Zcash</option>
+    <option value="Ripple">Ripple</option>
+    <option value="monery">Monero</option>
+  </select>
+  <br><br>
+  <br><br>
+  <br><br>
+
+</form>
+
+<p>Enter your START date in the format of "YYYY-MM-DD"</p>
+
+    <form action = "/start" method = "post">
+      <input name = "coname" placeholder = "YYYY-MM-DD" type="text">
+      <!-- <input type = "submit"> -->
+  </select>
+
+<p>Enter your END date in the format of "YYYY-MM-DD"</p>
+
+<form action = "/end" method = "post">
+      <input name = "coname" placeholder = "YYYY-MM-DD" type="text">
+      <!-- <input type = "submit"> -->
+  </select>
+  <br><br>
+</form>
+
+      <h1><input type="submit"></h1>
+
+</form>
+
+</body>
+</html>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Bam!</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Print</button>
+                <br><br>
+                <button class="btn btn-sm btn-outline-secondary">Export to Excel</button>
+                <br><br>
                 <br><br>
                 <br><br>
               </div>
             </div>
           </div>
 
-          <div>
-              <object type="text/html" data="http://0.0.0.0/" width="1000px" height="600px" style="overflow:auto;border:5px ridge blue">
-              </object>
 
-              </object>
-          </div>
-          <!-- </a> -->
-           <!--    </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/graph">
-                  <span data-feather="file"></span> -->
-                  <p>Click to go home</p>
-          <!-- </a> -->
-          <p>Click to go back to CryptosAbyss</p>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5002">
-                  <span data-feather="file"></span>
-                  AAPL
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5003">
-                  <span data-feather="file"></span>
-                  C
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5004">
-                  <span data-feather="file"></span>
-                  DIA
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5005">
-                  <span data-feather="file"></span>
-                  EWJ
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5006">
-                  <span data-feather="file"></span>
-                  FDN
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5007">
-                  <span data-feather="file"></span>
-                  GBCH
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5008">
-                  <span data-feather="file"></span>
-                  GBIT
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5009">
-                  <span data-feather="file"></span>
-                  GLBO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5002">
-                  <span data-feather="file"></span>
-                  GBTK
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5010">
-                  <span data-feather="file"></span>
-                  GCURR
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5011">
-                  <span data-feather="file"></span>
-                  GCRYP
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5012">
-                  <span data-feather="file"></span>
-                  GE
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5013">
-                  <span data-feather="file"></span>
-                  GETHER
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5014">
-                  <span data-feather="file"></span>
-                  GLD
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5015">
-                  <span data-feather="file"></span>
-                  GMAF
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5016">
-                  <span data-feather="file"></span>
-                  GOOG
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5017">
-                  <span data-feather="file"></span>
-                  GPRES
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5018">
-                  <span data-feather="file"></span>
-                  GSATO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5019">
-                  <span data-feather="file"></span>
-                  GTRA
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5020">
-                  <span data-feather="file"></span>
-                  GTRMP
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5021">
-                  <span data-feather="file"></span>
-                  IWM
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5023">
-                  <span data-feather="file"></span>
-                  IWY
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5024">
-                  <span data-feather="file"></span>
-                  JPM
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5025">
-                  <span data-feather="file"></span>
-                  ROBO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5026">
-                 <span data-feather="file"></span>
-                  SPY
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5027">
-                  <span data-feather="file"></span>
-                  TLT
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5028">
-                  <span data-feather="file"></span>
-                  UNG
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5029">
-                  <span data-feather="file"></span>
-                  USO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5030">
-                  <span data-feather="file"></span>
-                  VGT
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5031">
-                  <span data-feather="file"></span>
-                  XLE
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5032">
-                  <span data-feather="file"></span>
-                  XLK
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5033">
-                  <span data-feather="file"></span>
-                  XLU
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5034">
-                  <span data-feather="file"></span>
-                  XLY
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5035">
-                  <span data-feather="file"></span>
-                  YBIT
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5036">
-                  <span data-feather="file"></span>
-                  YBLO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5037">
-                  <span data-feather="file"></span>
-                  YIB
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5038">
-                  <span data-feather="file"></span>
-                  YBLO
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5039">
-                  <span data-feather="file"></span>
-                  YIB
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5040">
-                  <span data-feather="file"></span>
-                  YMAF
-                </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="http://0.0.0.0:5041">
-                  <span data-feather="file"></span>
-                  SMH
-                </a>
-          </li>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
@@ -357,5 +161,35 @@
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-  </body>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 6,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body> -->
+  <a href= "https://www.coindesk.com/price">Powered by CoinDesk</a>
 </html>

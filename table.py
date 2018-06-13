@@ -1,18 +1,12 @@
-#!usr/bin/env python3
-
 import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table_experiments as dt
-#import json
+import json
 import pandas as pd
 import numpy as np
 import plotly
-
-plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
-
-
 #from bitetfgraph import ref
 app = dash.Dash()
 # print(ref)
@@ -42,13 +36,10 @@ ROWS = [
 ]
 
 
-app.layout = html.Div([html.Div([
-    html.H2('CryptosAbyss'),
-    html.H5('Google and Yahoo represent the interest of the chosen words/terms that were searched in Google / Youtube over the time frame presented.'),
-    html.H6('--The amount of interest is represented with numbers on a scale from 0-100 having 100 being the moment in the time frame where there was the most interest in searching Google or Yahoo with the word/term presented, and 0 being the least amount of interest shown.'),
-    html.H6('--These numbers as well as stock/etf prices were then normalized on a scale of 0-1 which will show the price/interest over the course of time for each item.'),
-    html.H5('After converting all the numbers to normalized numbers on an equal 0-1 scale, the number shown under correlation represents the percentage amount of movement that each of the given items move over time ALL compared to the price of Bitcoin'),
-]),
+app.layout = html.Div([
+    html.H4('CryptosAbyss'),
+    html.H6('*Google and Yahoo represent the interest of those words/terms vs the price of Bitcoin over time'),
+    html.H6('*Correlation numbers are calculated on a 0-1 scale, with a negative number meaning inversly correlated...to the price of Bitcoin over time'),
     dt.DataTable(
         rows=DF_ChartBit.to_dict('records'),
         row_selectable=True,
@@ -56,11 +47,11 @@ app.layout = html.Div([html.Div([
         sortable=True,
         selected_row_indices=[],
         id='datatable-gapminder'
-),
+    ),
     html.Div(id='selected-indexes'),
     dcc.Graph(
         id='graph-gapminder'
-),
+    ),
 ], className="container")
 
 
@@ -91,7 +82,18 @@ def update_figure(rows, selected_row_indices):
     marker = {'color': ['#0074D9'] * len(dff)}
     for i in (selected_row_indices or []):
         marker['color'][i] = '#FF851B'
-
+    # fig.append_trace({
+    #     'x': dff['Type'],
+    #     'y': dff['Correlation to Bitcoin'],
+    #     'type': 'bar',
+    #     'marker': marker
+    # }, 3, 1)
+    # fig.append_trace({
+    #     'x': dff['Type'],
+    #     'y': dff['Correlation to Bitcoin'],
+    #     'type': 'bar',
+    #     'marker': marker
+    # }, 2, 1)
     fig.append_trace({
         'x': dff['Type'],
         'y': dff['Correlation'],
@@ -115,4 +117,4 @@ app.css.append_css({
 })
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='127.0.0.1', port=8000)
+    app.run_server(debug=True, host='0.0.0.0', port=7000)
