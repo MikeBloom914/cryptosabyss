@@ -52,6 +52,7 @@ app.layout = html.Div([
         selected_row_indices=[],
         id='datatable-gapminder'
     ),
+    html.H6('''"Man looks in the abyss, there's nothing staring back at him. At that moment, man finds his character. And that is what keeps him out of the abyss."'''),
     html.Div(id='selected-indexes'),
     dcc.Graph(
         id='graph-gapminder'
