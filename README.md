@@ -7,4 +7,4 @@ There are two parts to this project.  One is a chart showing all the things ment
 
 Please leave a message if you would like to see something else compared and I will do my best to add it. Thanks!
 
-Coming soon... A live website whith the chart on it and you will be able to generate the graph of what you choose on the site.
+Coming soon... A live website with the table on it and option to see graph of comparisons.
