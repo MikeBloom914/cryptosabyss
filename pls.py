@@ -20,8 +20,12 @@ import plotly.graph_objs as go
 import plotly
 plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
 
+def use():
+sym = pd.read_csv('chartinfo.csv')
+ref = sym['Name']
 
-ref = 'SMH'
+#ref = 'SMH'
+
 
 start_date = 'May 01, 2017'
 end_date = 'Apr 30, 2017'
@@ -67,7 +71,6 @@ rdcorr = round(corr1, 3)
 #df = DF_All.to_csv('{ref}.csv'.format(ref=ref))
 
 print(rdcorr)
-
 ###dispacher###
 app = dash.Dash()
 
@@ -76,10 +79,20 @@ app = dash.Dash()
 ####TO DO####
 ### HAVE A CHECKLIST/DROPDOWN###
 app.layout = html.Div(children=[
+    dcc.Dropdown(
+        id='ref',
+        options=[{'label': s[0]}
+                 for s in zip(ref)],
+        multi=True
+    ),
+
     html.H2(children="Bitcoin vs {ref} has a correlation of {rdcorr} from {start_date} through {end_date}".format(ref=ref, rdcorr=rdcorr, start_date=start_date, end_date=end_date)),
     html.H3('SMH is the semiconductor index with large percentages of Intel,NVDIA etc...'),
     html.H4('*Hover over lines to show prices'),
     html.H4('*Click and drag over graph to zoom in; double click to zoom out'),
+    #############################################
+
+    #############################################
     dcc.Graph(
         id="'{ref}' vs Bitcoin".format(ref=ref),
         figure={
@@ -113,5 +126,6 @@ app.layout = html.Div(children=[
     )
 ])
 
+
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=12000)
+    app.run_server(debug=True, host='0.0.0.0')
