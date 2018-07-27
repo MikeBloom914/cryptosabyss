@@ -27,7 +27,7 @@ start_date = 'May 01, 2017'
 end_date = 'Apr 30, 2017'
 
 
-ok = pd.read_csv('oneyearwkly.csv', header=0)
+ok = pd.read_csv('oneyearwkly_one_month.csv', header=0)
 series = ok.ix[:, ['Bitcoin']]
 values = series.values
 values = values.reshape((len(values), 1))
@@ -57,7 +57,7 @@ for x in range(len(nums)):
 dfbitnorm = pd.DataFrame(np.array(h).reshape(len(values), 1), columns=["Bit"])
 
 dfrefnorm = pd.DataFrame(np.array(g).reshape(len(values), 1), columns=["ref"])
-DF_Price = pd.read_csv('oneyearwkly.csv')
+DF_Price = pd.read_csv('oneyearwkly_one_month.csv')
 df4 = dfrefnorm.join(dfbitnorm)
 DF_All = DF_Price.join(df4)
 # print(DF_All)
