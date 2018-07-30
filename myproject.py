@@ -3,16 +3,17 @@ from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table_experiments as dt
-#import json
 import pandas as pd
 import numpy as np
 import plotly
 plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
 
-app = dash.Dash()
+#app = dash.Dash()
+app = dash.Dash(__name__)
+
+server = app.server
 
 app.scripts.config.serve_locally = True
-# app.css.config.serve_locally = True
 
 DF_TableBit = pd.read_csv('newchart.csv')
 
@@ -36,7 +37,11 @@ ROWS = [
 
 
 app.layout = html.Div([
-    html.H4('CryptosAbyss'),
+    html.H5('CryptosAbyss is an statistical data analyzing project which involves an interactive table that produces three time series bar charts showing the relationship between the price of Bitcoin and other contemporary phenomenos over the course of time.'),
+    html.H6('-Google and YouTube represent the popularity of the search term mentioned under "description" relative throughout the time period.'),
+    html.H6('--Correlation numbers represent a percent movement on a normalied scale from -1 to 1.'),
+    html.H6("""---For example, the correlation between Bitcoin and GCRYPT was .84. If you looked at a graph of the price of Bitcoin and a graph of the popularity of the search term "Crypto" in google throughout the same time period, their plots on the x and y axis' would match up 84% of the time. """),
+    html.H6('----The three columns represent correlation at the same time, and with "var X" one week and one month before Bitcoin respectfully...any questions please feel free to email me at mikebloom914@gmail.com.'),
     dt.DataTable(
         rows=DF_TableBit.to_dict('records'),
 
@@ -109,7 +114,7 @@ def update_figure(rows, selected_row_indices):
         't': 60,
         'b': 200
     }
-    fig['layout']['yaxis4']['type'] = 'log'
+    fig['layout']['yaxis3']['type'] = 'log'
     return fig
 
 
@@ -118,4 +123,4 @@ app.css.append_css({
 })
 
 if __name__ == '__main__':
-    app.run_server(port=7000, debug=True)
+    app.run_server(debug=True)
