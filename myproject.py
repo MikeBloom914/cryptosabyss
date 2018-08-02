@@ -3,17 +3,20 @@ from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table_experiments as dt
+import flask
+from flask import Flask
 import pandas as pd
 import numpy as np
 import plotly
 
 
-plotly.tools.set_credentials_file(username=your_username, api_key=your_api_key)
+#plotly.tools.set_credentials_file(username='username', api_key='api_key')
 
 #app = dash.Dash()
-app = dash.Dash(__name__)
+app_flask = flask.Flask(__name__)
+app = dash.Dash(__name__, server=app_flask)
 
-server = app.server
+#server = app.server
 
 app.scripts.config.serve_locally = True
 
@@ -44,6 +47,7 @@ app.layout = html.Div([
     html.H6('--Correlation numbers represent a percent movement on a normalied scale from -1 to 1.'),
     html.H6("""---For example, the correlation between Bitcoin and GCRYPT was .84. If you looked at a graph of the price of Bitcoin and a graph of the popularity of the search term "Crypto" in google throughout the same time period, their plots on the x and y axis' would match up 84% of the time. """),
     html.H6('----The three columns represent correlation at the same time, and with "var X" one week and one month before Bitcoin respectfully...any questions please feel free to email me at mikebloom914@gmail.com.'),
+    html.H6('*Ticker Symbols for social media are those of BloomsEdge.com and not official'),
     dt.DataTable(
         rows=DF_TableBit.to_dict('records'),
 
@@ -91,19 +95,19 @@ def update_figure(rows, selected_row_indices):
     for i in (selected_row_indices or []):
         marker['color'][i] = '#FF851B'
     fig.append_trace({
-        'x': dff['Name'],
+        'x': dff['Ticker'],
         'y': dff['Correlation'],
         'type': 'bar',
         'marker': marker
     }, 1, 1)
     fig.append_trace({
-        'x': dff['Name'],
+        'x': dff['Ticker'],
         'y': dff['Corr1week'],
         'type': 'bar',
         'marker': marker
     }, 2, 1)
     fig.append_trace({
-        'x': dff['Name'],
+        'x': dff['Ticker'],
         'y': dff['Corr1month'],
         'type': 'bar',
         'marker': marker
@@ -125,4 +129,4 @@ app.css.append_css({
 })
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app_flask.run(debug=True)
