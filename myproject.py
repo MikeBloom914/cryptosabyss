@@ -1,3 +1,4 @@
+import creds
 import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
@@ -10,7 +11,7 @@ import numpy as np
 import plotly
 
 
-#plotly.tools.set_credentials_file(username='username', api_key='api_key')
+plotly.tools.set_credentials_file(username=username, api_key=api_key)
 
 #app = dash.Dash()
 app_flask = flask.Flask(__name__)
