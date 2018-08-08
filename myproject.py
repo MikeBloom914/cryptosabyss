@@ -11,7 +11,7 @@ import numpy as np
 import plotly
 
 
-plotly.tools.set_credentials_file(username=username, api_key=api_key)
+plotly.tools.set_credentials_file(username=creds.username, api_key=creds.api_key)
 
 #app = dash.Dash()
 app_flask = flask.Flask(__name__)
