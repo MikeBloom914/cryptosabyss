@@ -43,7 +43,7 @@ ROWS = [
 
 
 app.layout = html.Div([
-    html.H5('CryptosAbyss is an statistical data analyzing project which involves an interactive table that produces three time series bar charts showing the relationship between the price of Bitcoin and other contemporary phenomenos over the course of time.'),
+    html.H5('CryptosAbyss is an statistical data analyzing project which involves an interactive table that produces three time series bar charts showing the relationship between the price of Bitcoin and other contemporary phenomena over the course of time.'),
     html.H6('-Google and YouTube represent the popularity of the search term mentioned under "description" relative throughout the time period.'),
     html.H6('--Correlation numbers represent a percent movement on a normalied scale from -1 to 1.'),
     html.H6("""---For example, the correlation between Bitcoin and GCRYPT was .84. If you looked at a graph of the price of Bitcoin and a graph of the popularity of the search term "Crypto" in google throughout the same time period, their plots on the x and y axis' would match up 84% of the time. """),
